@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Website Horizontal Scrolling with jQuery</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="Website Horizontal Scrolling with jQuery" />
+        <meta name="keywords" content="jquery, horizontal, scrolling, scroll, smooth"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    
+
+    </head>
+    <style>
+        a{
+            color:#fff;
+            text-decoration:none;
+        }
+        a:hover{
+            text-decoration:underline;
+        }
+      
+
+        
+
+         .zoom{
+           
+            transition:transform .2s;
+            
+         }
+
+          .zoom:hover{
+           
+            transform:scale(1.5);
+          }
+</style>
+    <body>
+       
+            
+    
+        
+        <div class="section black" id="section1">
+            <img src="logo.png" alt="catapult logo">
+            <h2>Energy System Digital Landscape</h2>
+            
+            
+            
+
+            <ul class="nav">
+               
+                <li><a href="#section2">Consumer services</a></li>
+                <li><a href="#section3">Service Providers - Financing, Efficiency, Retroits, DER as a service</a></li>
+            </ul>
+        </div>
+        <div class="section white" id="section2">
+                <img src="logo.png" alt="catapult logo">
+                
+                
+            <div class="first">
+                <div class="item1">
+                    <ul>
+
+            <li class="cons_serv"> <a href="#section1">Consumer Services</a></li>
+        </ul>
+            <p>The navigation design should<br>
+            Communicate the realationship between<br>
+            the links it contains so.</p>
+            </div>
+              <div class="item2">
+                <ul class="nav">
+                
+                <li><a href="#section3">Electricity</a></li>
+                <li class="black1">Good Energy</li>
+                <li class="black1">Green Star</li>
+                <li class="black1">Bulb</li>
+                <li class="black1">Octopus Energy</li>
+                <li class="black1">Green Energy</li>
+                <li class="black1">Pure Planet</li>
+                <li class="black1">Lumo</li>
+                
+
+                
+            </ul>
+            </div>
+            </div>
+        </div>
+        <div class="section black" id="section3">
+            
+           
+          <img src="logo.png" alt="catapult logo" >
+          <div class="flex2">
+              <div>
+          <a href="#section1"><img src="right.png" class="zoom"></a>
+          </div>
+            
+              <div  class="show zoom">
+                <a href="#section2">Electricity</a>
+                <p>The navigation design should<br>
+                    Communicate the realationship between<br>
+                    the links it contains so.</p>
+                </div>
+                
+            
+        </div>
+        </div>
+    
+
+
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>		
+        <script type="text/javascript">
+            $(function() {
+                $('ul.nav a').bind('click',function(event){
+                    var $anchor = $(this);
+                    /*
+                    if you want to use one of the easing effects:
+                    $('html, body').stop().animate({
+                        scrollLeft: $($anchor.attr('href')).offset().left
+                    }, 1500,'easeInOutExpo');
+                     */
+                    $('html, body').stop().animate({
+                        scrollLeft: $($anchor.attr('href')).offset().left
+                    }, 1000);
+                    event.preventDefault();
+                });
+            });
+
+
+
+        </script>
+    </body>
+</html>
